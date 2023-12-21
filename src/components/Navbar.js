@@ -5,6 +5,7 @@ import { CiShoppingCart } from "react-icons/ci";
 import { GiClothes } from "react-icons/gi";
 import { Roboto } from 'next/font/google'
 import styles from '../styles/Home.module.css'
+import { CiUser } from "react-icons/ci";
 
 const roboto = Roboto({
   weight: '900',
@@ -19,7 +20,7 @@ const Navbar = () => {
           {/* <GiClothes className='main-logo  font-extrabold text-6xl p-2 text-pink-800' /> */}
           <img src="/mainlogo2.jpg" alt="" className={styles.mainlogo} />
         </div>
-        <div className='logx text-xl'>
+        <div className='logx text-xl font-bold'>
           <div className={roboto.className}>
             YOUNGLA
           </div>
@@ -31,7 +32,11 @@ const Navbar = () => {
             <Link href={"/contact"} className='mx-2'><li>Contact</li></Link>
           </ul>
         </div>
+        <div className="cart absolute right-9 top mx-5">
+          <CiUser className='text-2xl cursor-pointer font-extrabold' />
+        </div>
         <div className="cart absolute right-0 top mx-5">
+
           <CiShoppingCart className='text-3xl  cursor-pointer' />
         </div>
       </nav>
