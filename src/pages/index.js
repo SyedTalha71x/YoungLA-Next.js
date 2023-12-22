@@ -10,11 +10,6 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>Lifestyle Clothing Brand: YoungLA </title>
-        <meta name='viewport' content="width=device-width , initial-scale=1.0 , minimum-scale=1.0" />
-        <link rel="icon" href="/mianlogo.jpg" />
-      </Head>
       <div>
         <img src="https://www.youngla.com/cdn/shop/files/12.13.23_Launch_Desktop_1600x.jpg?v=1702490532" alt="" className={styles.imagepage} />
         <div>

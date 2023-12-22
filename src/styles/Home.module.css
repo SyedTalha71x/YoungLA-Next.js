@@ -18,6 +18,13 @@
     border-radius: 100%;
 }
 
+@media screen and (max-width: 790px)
+{
+    .mainlogo2{
+        display: none;
+    }
+}
+
 .imagepage{
     height: 100%;
     width: 100%;

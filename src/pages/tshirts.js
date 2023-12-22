@@ -4,7 +4,7 @@ import Link from 'next/link'
 const tshirts = () => {
   return (
     <div>
-      <section class="text-gray-600 body-font cursor-pointer">
+      <section class="text-gray-600 body-font cursor-pointer overflow-hidden">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-wrap -m-4">
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
