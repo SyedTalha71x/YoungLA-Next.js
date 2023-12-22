@@ -12,11 +12,11 @@ export default function Home() {
     <div>
       <Head>
         <title>Lifestyle Clothing Brand: YoungLA </title>
-        <meta name='description' content='Youngla.com - Online Clothing Brand' />
+        <meta name='viewport' content="width=device-width , initial-scale=1.0 , minimum-scale=1.0" />
         <link rel="icon" href="/mianlogo.jpg" />
       </Head>
       <div>
-        <img src="https://www.youngla.com/cdn/shop/files/12.13.23_Launch_Desktop_1600x.jpg?v=1702490532" alt="" />
+        <img src="https://www.youngla.com/cdn/shop/files/12.13.23_Launch_Desktop_1600x.jpg?v=1702490532" alt="" className={styles.imagepage} />
         <div>
           <section className="text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">
@@ -54,7 +54,7 @@ export default function Home() {
                     <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
                       <IoShirtSharp />
                     </div>
-                    <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Men's Trouser</h2>
+                    <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Men's Joggers</h2>
                     <Link href={"/trouser"}>
                       <button className="shirts-btn bg-black text-white font-semibold px-14 py-3 shadow-xl rounded-sm hover:bg-purple-50 hover:text-black my-2">Checkout</button>
 
