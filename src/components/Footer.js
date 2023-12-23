@@ -2,11 +2,23 @@ import React from 'react'
 import Link from 'next/link'
 import { GiClothes } from "react-icons/gi";
 import styles from '../styles/Home.module.css'
+import { Roboto } from 'next/font/google'
+import { Montserrat } from 'next/font/google';
+
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+});
+
+const montserrat = Montserrat({
+  weight: '500',
+  subsets: ['latin'],
+});
 
 
 const Footer = () => {
   return (
-    <div>
+    <div className={montserrat.className}>
       <footer className="bg-white dark:bg-gray-900 cursor-pointer">
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
@@ -23,7 +35,7 @@ const Footer = () => {
                 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Explore</h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
-                    <a href="" className="hover:underline">Our Story</a>
+                    <Link href={"/about"} className="hover:underline">Our Story</Link>
                   </li>
                   <li>
                     <a href="" className="hover:underline">Careers</a>
@@ -57,7 +69,7 @@ const Footer = () => {
                     <a href="#" className="hover:underline">Terms &amp; Conditions</a>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">Contact Us</a>
+                    <Link href={"/contact"} className="hover:underline">Contact Us</Link>
                   </li>
                 </ul>
               </div>

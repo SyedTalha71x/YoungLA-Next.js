@@ -38,7 +38,7 @@ const Navbar = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
     }
   }
   return (
-    <div>
+    <div className={montserrat.className}>
       <nav className=' flex flex-col  md:flex-row md:justify-start justify-center items-center shadow-xl'>
         <div className="logo ">
           {/* <GiClothes className='main-logo  font-extrabold text-6xl p-2 text-pink-800' /> */}
@@ -50,15 +50,19 @@ const Navbar = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
           </div>
         </div>
         <div className="links">
-          <ul className='flex justify-center items-center mx-8 font-semibold p-2 text-blue-900'>
+          <ul className='listitems flex justify-center items-center mx-8  font-medium p-2 uppercase'>
             <Link href={"/"} className='mx-2'><li>Home</li></Link>
             <Link href={"/about"} className='mx-2'><li>Our Story</li></Link>
             <Link href={"/contact"} className='mx-2'><li>Contact</li></Link>
           </ul>
         </div>
         <div className="cart cursor-pointer absolute right-9 top mx-5 " aria-hidden="false" >
-          <CiUser className='text-2xl cursor-pointer font-extrabold' />
+          <Link href={"/login"}>
+            <CiUser className='text-2xl cursor-pointer font-extrabold' />
+          </Link>
         </div>
+
+
         <div onClick={toggleCart} className="cart absolute right-0 top mx-5 ">
 
           <CiShoppingCart className='text-3xl  cursor-pointer' />
@@ -91,21 +95,24 @@ const Navbar = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
                   </div>
                 </div>
               })}
-              <div
-                className="current grid grid-cols-2 gap-1 my-4 ">
-                <div className="checkbtn">
-                  <Link href={"/checkout"}>
-                    <button className='bg-black py-2 px-8  cursor-pointer text-white font-semibold rounded-sm text-center'>Checkout</button>
-                  </Link>
-                </div>
-                <div className="removebtn">
-                  <button onClick={ClearCart} className='bg-black py-2 px-8 text-white font-semibold rounded-sm text-center cursor-pointer'>Remove</button>
+              <div className={montserrat.className}>
+                <div
+                  className="current grid grid-cols-2 gap-1 my-4 ">
+                  <div className="checkbtn">
+                    <Link href={"/checkout"}>
+                      <button className='bg-black py-2 px-8 uppercase cursor-pointer text-white font-medium  text-center'>Checkout</button>
+                    </Link>
+                  </div>
+                  <div className="removebtn">
+                    <button onClick={ClearCart} className='bg-black uppercase ml-4 py-2 px-8 text-white font-medium  text-center cursor-pointer'>Remove</button>
+                  </div>
                 </div>
               </div>
             </div>
 
           </div>
         </div>
+
       </nav>
     </div>
   )
