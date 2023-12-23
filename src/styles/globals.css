@@ -14,12 +14,12 @@ body{
     font-size: 20px;
     margin-left: 2px;
 }
-.cartrow{
+/* .cartrow{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin-top: 10px;
-}
+} */
 .cartimage{
     width: 100%;
 }
@@ -43,7 +43,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 40%;
     margin-top: 10px;
 }
 .increment span{

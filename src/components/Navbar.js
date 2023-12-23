@@ -23,11 +23,9 @@ const montserrat = Montserrat({
   subsets: ['latin'],
 });
 
-const Navbar = () => {
+const Navbar = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
 
   const ref = useRef();
-
-
 
   const toggleCart = () => {
     if (ref.current.classList.contains('translate-x-full')) {
@@ -74,21 +72,28 @@ const Navbar = () => {
           <span onClick={toggleCart} className='cross absolute top-3  right-2 cursor-pointer text-xl text-purple-950'><ImCross /></span>
           <div className="cartinfo cursor-pointer">
             <div className="cartsolid">
-              <div className="cartrow">
-                <div className="leftcart">
-                  <img src="https://cdn.shopify.com/s/files/1/1775/6429/files/YOUNGLA9_240x.jpg?v=1702327861" alt="" className='cartimage' />
+              {Object.keys(cart).length == 0 && <div className=' mt-4 mb-4 text-center uppercase font-bold'>Your Cart is Empty</div>}
+              {Object.keys(cart).map((k) => {
+                return <div className="cartrow" key={k}>
+                  <div className="rightcart">
+                    <h2>{cart[k].name}</h2>
+                    <p>{cart[k].variant}</p>
+                    <p>{cart[k].size}</p>
+                    <span>${cart[k].price}</span>
+                    <div className="increment">
+                      <span className='minus '><CiCircleMinus onClick={() => { RemoveToCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant) }} className='text-xl font-bold' />
+                      </span> <span className='quantity text-xl m-2'>{cart[k].qty}</span><span className='plus'><  CiCirclePlus className='text-xl font-bold' onClick={() => { addToCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant) }} /></span>
+                    </div>
+
+                  </div>
                 </div>
-                <div className="rightcart">
-                  <h2>570 - ALPINE PUFFY...</h2>
-                  <p>BLACK / SMALL</p>
-                  <span>$75.00</span>
-                  <div className="increment">
-                    <span className='minus '><CiCircleMinus className='text-xl font-bold' />
-                    </span> <span className='quantity text-xl m-2'>1</span><span className='plus'>< CiCirclePlus className='text-xl font-bold' /></span>
-                  </div>
-                  <div className="remove">
-                    <p className='rem absolute top-[200px] right-7 underline '><CiTrash className='text-2xl font-bold' /></p>
-                  </div>
+              })}
+              <div className="current grid grid-cols-2 gap-1 my-4">
+                <div className="checkbtn">
+                  <button className='bg-black py-2 px-8  cursor-pointer text-white font-semibold rounded-sm text-center'>Checkout</button>
+                </div>
+                <div className="removebtn">
+                  <button onClick={ClearCart} className='bg-black py-2 px-8 text-white font-semibold rounded-sm text-center cursor-pointer'>Remove</button>
                 </div>
               </div>
             </div>
