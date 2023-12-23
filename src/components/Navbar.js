@@ -39,7 +39,7 @@ const Navbar = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
   }
   return (
     <div>
-      <nav className='flex flex-col  md:flex-row md:justify-start justify-center items-center shadow-xl'>
+      <nav className=' flex flex-col  md:flex-row md:justify-start justify-center items-center shadow-xl'>
         <div className="logo ">
           {/* <GiClothes className='main-logo  font-extrabold text-6xl p-2 text-pink-800' /> */}
           <img src="/mainlogo2.jpg" alt="" className={styles.mainlogo} />
@@ -59,12 +59,12 @@ const Navbar = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
         <div className="cart cursor-pointer absolute right-9 top mx-5 " aria-hidden="false" >
           <CiUser className='text-2xl cursor-pointer font-extrabold' />
         </div>
-        <div onClick={toggleCart} className="cart absolute right-0 top mx-5 z-0 ">
+        <div onClick={toggleCart} className="cart absolute right-0 top mx-5 ">
 
           <CiShoppingCart className='text-3xl  cursor-pointer' />
         </div>
-        <div ref={ref} className="sidebar h-[78%] w-96  absolute top-0 right-0  bg-slate-200 p-10 transform transition-transform duration-[0.4s] translate-x-full
-    ">
+        <div ref={ref} className={`sidebar h-[78%] w-96  absolute top-0 right-0 z-10  bg-slate-200 p-10 transform transition-transform duration-[0.4s] ${Object.keys(cart).length !== 0 ? 'translate-x-0' : 'translate-x-full'}
+    `}>
           <h2 className={montserrat.className}>CART</h2>
 
           <div className="row bg-black h-[1px] my-2 w-full"></div>
@@ -80,6 +80,9 @@ const Navbar = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
                     <p>{cart[k].variant}</p>
                     <p>{cart[k].size}</p>
                     <span>${cart[k].price}</span>
+                    <div>
+                      <span>Total {subTotal}</span>
+                    </div>
                     <div className="increment">
                       <span className='minus '><CiCircleMinus onClick={() => { RemoveToCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant) }} className='text-xl font-bold' />
                       </span> <span className='quantity text-xl m-2'>{cart[k].qty}</span><span className='plus'><  CiCirclePlus className='text-xl font-bold' onClick={() => { addToCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant) }} /></span>
@@ -88,9 +91,12 @@ const Navbar = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
                   </div>
                 </div>
               })}
-              <div className="current grid grid-cols-2 gap-1 my-4">
+              <div
+                className="current grid grid-cols-2 gap-1 my-4 ">
                 <div className="checkbtn">
-                  <button className='bg-black py-2 px-8  cursor-pointer text-white font-semibold rounded-sm text-center'>Checkout</button>
+                  <Link href={"/checkout"}>
+                    <button className='bg-black py-2 px-8  cursor-pointer text-white font-semibold rounded-sm text-center'>Checkout</button>
+                  </Link>
                 </div>
                 <div className="removebtn">
                   <button onClick={ClearCart} className='bg-black py-2 px-8 text-white font-semibold rounded-sm text-center cursor-pointer'>Remove</button>

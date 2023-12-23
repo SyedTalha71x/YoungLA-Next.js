@@ -4,11 +4,11 @@ import Link from 'next/link'
 const tshirts = () => {
   return (
     <div>
-      <section class="text-gray-600 body-font cursor-pointer overflow-hidden">
+      <section class="text-gray-600 body-font cursor-pointer ">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-wrap -m-4">
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative rounded overflow-hidden">
+              <a class="block relative rounded overflow-hidden ">
                 <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/570_black_004_12_12_johnny_ecomm_30eb1361-f526-4315-8001-629c9f6284f7_400x.jpg?v=1701972415" />
               </a>
               <div class="mt-4">

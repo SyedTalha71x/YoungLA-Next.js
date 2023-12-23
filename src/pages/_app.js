@@ -15,6 +15,7 @@ export default function App({ Component, pageProps }) {
     try {
       if (localStorage.getItem("cart")) {
         setcart(JSON.parse(localStorage.getItem("cart")));
+        saveCart(JSON.parse(localStorage.getItem("cart")));
       }
     } catch (error) {
       console.log(error);
@@ -28,7 +29,7 @@ export default function App({ Component, pageProps }) {
     let subt = 0;
     let keys = Object.keys(myCart);
     for (let i = 0; i < keys.length; i++) {
-      subt += myCart[keys[i]].price * myCart[keys[i]].qty
+      subt += myCart[keys[i]]["price"] * myCart[keys[i]].qty
     }
     setsubTotal(subt);
   }
@@ -64,7 +65,7 @@ export default function App({ Component, pageProps }) {
   }
 
   return <>
-    <Navbar cart={cart} addToCart={addToCart} RemoveToCart={RemoveToCart} ClearCart={ClearCart}
+    <Navbar key={subTotal} cart={cart} addToCart={addToCart} RemoveToCart={RemoveToCart} ClearCart={ClearCart}
       subTotal={subTotal} />
     <Head>
       <title>Lifestyle Clothing Brand: YoungLA </title>
