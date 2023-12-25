@@ -130,9 +130,9 @@ export default function Home() {
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-wrap -m-4">
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative rounded overflow-hidden">
+              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
                 <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/YLA_9.20_400x.jpg?v=1695750101" />
-              </a>
+              </Link>
               <div class="mt-4">
                 <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
                 <Link href={"/Products/weartheshirts"}>
@@ -142,9 +142,9 @@ export default function Home() {
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative rounded overflow-hidden">
+              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
                 <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/YLA_9.203_400x.jpg?v=1697672853" />
-              </a>
+              </Link>
               <div class="mt-4">
                 <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
                 <Link href={"/Products/weartheshirts"}>
@@ -154,9 +154,9 @@ export default function Home() {
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative rounded overflow-hidden">
+              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
                 <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/DSC05419_400x.jpg?v=1690394021" />
-              </a>
+              </Link>
               <div class="mt-4">
                 <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
                 <Link href={"/Products/weartheshirts"}>
@@ -166,9 +166,9 @@ export default function Home() {
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative rounded overflow-hidden">
+              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
                 <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/571_black-white_001_12_12_johnny_ecomm_99f3abd1-c286-40de-b6a8-9c29c55da5d4_400x.jpg?v=1701972656" />
-              </a>
+              </Link>
               <div class="mt-4">
                 <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
                 <Link href={"/Products/weartheshirts"}>
@@ -178,9 +178,9 @@ export default function Home() {
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative rounded overflow-hidden">
+              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
                 <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/152_royal-blue-wash_001_11_02_rudy_ecomm_400x.jpg?v=1699387924" />
-              </a>
+              </Link>
               <div class="mt-4">
                 <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
                 <Link href={"/Products/weartheshirts"}>
@@ -190,9 +190,9 @@ export default function Home() {
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative rounded overflow-hidden">
+              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
                 <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/153_black-wash_002_12_12_rudy_ecomm_1_400x.jpg?v=1701975167" />
-              </a>
+              </Link>
               <div class="mt-4">
                 <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
                 <Link href={"/Products/weartheshirts"}>
@@ -202,9 +202,9 @@ export default function Home() {
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative rounded overflow-hidden">
+              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
                 <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/832_burgundy_002_11_02_johnny_ecomm_400x.jpg?v=1699413779" />
-              </a>
+              </Link>
               <div class="mt-4">
                 <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
                 <Link href={"/Products/weartheshirts"}>
@@ -214,9 +214,9 @@ export default function Home() {
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative rounded overflow-hidden">
+              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
                 <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/478_peat-wash_001_11_02_jerdani_ecomm_400x.jpg?v=1699474310" />
-              </a>
+              </Link>
               <div class="mt-4">
                 <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
                 <Link href={"/Products/weartheshirts"}>

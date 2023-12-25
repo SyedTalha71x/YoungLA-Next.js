@@ -1,0 +1,11 @@
+{
+   "title":"younglajeans",
+   "slug":"younglasmall",
+   "desc":"amazing brand",
+   "img": "displaybranding",
+   "category": "jeans",
+   "size": "small",
+   "color": "black",
+   "price": 5600,
+   "availableqty": 1
+}
