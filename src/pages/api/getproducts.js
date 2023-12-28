@@ -6,8 +6,7 @@ connectDB();
 const handler = async (req, res) => {
     try {
         const products = await Product.find();
-        console.log(products);
-        res.status(200).json({ products });
+        res.status(200).json({ tshirts });
 
     }
     catch (error) {

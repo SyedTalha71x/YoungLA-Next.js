@@ -6,6 +6,8 @@ import { IoShirtSharp } from "react-icons/io5";
 import Link from 'next/link';
 import { Roboto } from 'next/font/google'
 import { Montserrat } from 'next/font/google';
+import connectDB from '../../Middleware/db';
+import Product from '../../Models/Product';
 
 const roboto = Roboto({
   weight: '400',
@@ -19,7 +21,7 @@ const montserrat = Montserrat({
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({ products }) {
   return (
     <div>
       <div>
@@ -104,7 +106,7 @@ export default function Home() {
                     </Link>
                   </div>
                 </div>
-                <div className="xl:w-1/3 md:w-1/2 p-4">
+                <div className="xl:w-1/3 md:w-1/2 p-4 ">
                   <div className="border border-gray-200 p-6 rounded-lg">
                     <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
                       <IoShirtSharp />
@@ -123,112 +125,38 @@ export default function Home() {
           </section>
         </div>
       </div>
-      <section class="text-gray-600 body-font cursor-pointer">
+      <section class="text-gray-600 body-font cursor-pointer text-center">
         <div className={montserrat.className}>
           <h2 className='main_heading text-center text-2xl w-3/4 m-auto py-2 shadow-2xl   font-medium uppercase bg-black text-white '>New Arrivals</h2>
         </div>
         <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-wrap -m-4">
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/YLA_9.20_400x.jpg?v=1695750101" />
-              </Link>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
-                <Link href={"/Products/weartheshirts"}>
-                  <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+          <div class="flex flex-wrap -m-4" >
+            {Object.keys(products).map((k) => {
+              return <div class="lg:w-1/4 md:w-1/2 p-4 w-full" key={products[k]._id}>
+                <Link href={`/Products/${products[k].slug}`} class="block relative rounded overflow-hidden">
+                  <img alt="ecommerce" class="object-cover object-center w-full h-full block" src={products[k].img} />
                 </Link>
-                <p class="mt-1">$16.00</p>
+                <div class="mt-4">
+                  <Link href={`/Products/${products[k].slug}`}>
+                    <h2 class="text-gray-900 title-font text-center text-md font-medium">{products[k].title}</h2>
+                  </Link>
+                  <p class="mt-1">${products[k].price}</p>
+                </div>
               </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/YLA_9.203_400x.jpg?v=1697672853" />
-              </Link>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
-                <Link href={"/Products/weartheshirts"}>
-                  <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                </Link>
-                <p class="mt-1">$21.15</p>
-              </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/DSC05419_400x.jpg?v=1690394021" />
-              </Link>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
-                <Link href={"/Products/weartheshirts"}>
-                  <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                </Link>
-                <p class="mt-1">$12.00</p>
-              </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/571_black-white_001_12_12_johnny_ecomm_99f3abd1-c286-40de-b6a8-9c29c55da5d4_400x.jpg?v=1701972656" />
-              </Link>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
-                <Link href={"/Products/weartheshirts"}>
-                  <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                </Link>
-                <p class="mt-1">$18.40</p>
-              </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/152_royal-blue-wash_001_11_02_rudy_ecomm_400x.jpg?v=1699387924" />
-              </Link>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
-                <Link href={"/Products/weartheshirts"}>
-                  <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                </Link>
-                <p class="mt-1">$16.00</p>
-              </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/153_black-wash_002_12_12_rudy_ecomm_1_400x.jpg?v=1701975167" />
-              </Link>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
-                <Link href={"/Products/weartheshirts"}>
-                  <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                </Link>
-                <p class="mt-1">$21.15</p>
-              </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/832_burgundy_002_11_02_johnny_ecomm_400x.jpg?v=1699413779" />
-              </Link>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
-                <Link href={"/Products/weartheshirts"}>
-                  <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                </Link>
-                <p class="mt-1">$12.00</p>
-              </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <Link href={"/Products/wearthelatestones"} class="block relative rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.youngla.com/cdn/shop/files/478_peat-wash_001_11_02_jerdani_ecomm_400x.jpg?v=1699474310" />
-              </Link>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
-                <Link href={"/Products/weartheshirts"}>
-                  <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                </Link>
-                <p class="mt-1">$18.40</p>
-              </div>
-            </div>
+            })}
           </div>
         </div>
       </section>
     </div>
 
   )
+}
+export async function getServerSideProps() {
+  connectDB();
+  const products = await Product.find({ category: 'newarrivals' });
+  return {
+    props: {
+      products: JSON.parse(JSON.stringify(products)),
+    }
+  }
 }

@@ -12,7 +12,7 @@ const checkout = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
           {Object.keys(cart).map((k) => {
             return <div key={k} class="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
               <div class="flex flex-col rounded-lg bg-white sm:flex-row">
-                <img class="m-2 h-24 w-28 rounded-md border object-cover object-center" src="https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+                {/* <img class="m-2 h-24 w-28 rounded-md border object-cover object-center" src={cart[k].img} /> */}
                 <div class="flex w-full flex-col px-4 py-4">
                   <span class="font-semibold">{cart[k].name}</span>
                   <span class="float-right text-gray-400">{cart[k].size}</span>
@@ -30,8 +30,8 @@ const checkout = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
               <label class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4" for="radio_1">
                 <img class="w-14 object-contain" src="/images/naorrAeygcJzX0SyNI4Y0.png" alt="" />
                 <div class="ml-5">
-                  <span class="mt-2 font-semibold">Fedex Delivery</span>
-                  <p class="text-slate-500 text-sm leading-6">Delivery: 2-4 Days</p>
+                  <span class="mt-2 font-semibold">UPS Next Day Air.</span>
+                  <p class="text-slate-500 text-sm leading-6">Delivery: 2-7 Days</p>
                 </div>
               </label>
             </div>
