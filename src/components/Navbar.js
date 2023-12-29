@@ -39,12 +39,12 @@ const Navbar = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
   }
   return (
     <div className={montserrat.className}>
+      <div className='line w-full text-sm bg-black h-12 text-white text-center flex justify-center items-center'>FREE SHIPPING FOR ALL U.S. ORDERS OVER $75</div>
       <nav className=' flex flex-col  md:flex-row md:justify-start justify-center items-center shadow-xl'>
-        <div className="logo ">
-          {/* <GiClothes className='main-logo  font-extrabold text-6xl p-2 text-pink-800' /> */}
+        {/* <div className="logo ">
           <img src="/mainlogo2.jpg" alt="" className={styles.mainlogo} />
-        </div>
-        <div className='logx text-xl font-bold'>
+        </div> */}
+        <div className='logx text-3xl p-2  tracking-wide font-bold'>
           <div className={roboto.className}>
             YOUNGLA
           </div>
