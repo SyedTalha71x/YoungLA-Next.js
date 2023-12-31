@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-export default function Slug({ addToCart, product, variants }) {
+export default function Slug({ addToCart, product, variants, BuyNow }) {
     const router = useRouter()
 
     const [color, setcolor] = useState(product.color)
@@ -93,7 +93,7 @@ export default function Slug({ addToCart, product, variants }) {
                         <div className="flex">
                             <span className="title-font font-medium text-2xl text-gray-900">${product.price}</span>
                             <button onClick={() => { addToCart(Slug, 1, product.price, product.title, size, color) }} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Checkout</button>
-                            <button onClick={() => buyNow(Slug, 1, product.price, product.title, size, color)} className=" flex ml-2 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                            <button onClick={() => BuyNow(Slug, 1, product.price, product.title, size, color)} className=" flex ml-2 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                                 Buy Now
                             </button>
                         </div>

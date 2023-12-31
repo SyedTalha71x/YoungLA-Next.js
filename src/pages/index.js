@@ -24,8 +24,8 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home({ products }) {
   return (
     <div>
-      <div>
-        <img src="https://www.youngla.com/cdn/shop/files/12.13.23_Launch_Desktop_1600x.jpg?v=1702490532" alt="" className={styles.imagepage} />
+      <div className='mainimagepage'>
+        <img  src="https://www.youngla.com/cdn/shop/files/12.13.23_Launch_Desktop_1600x.jpg?v=1702490532" alt="" className={styles.imagepage} />
         <div>
           <section className="text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">

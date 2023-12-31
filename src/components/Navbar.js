@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { CiShoppingCart } from "react-icons/ci";
@@ -11,6 +11,11 @@ import { ImCross } from "react-icons/im";
 import { CiCircleMinus } from "react-icons/ci";
 import { CiCirclePlus } from "react-icons/ci";
 import { CiTrash } from "react-icons/ci";
+import { RiAdminFill } from "react-icons/ri";
+import { FaEllo } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
+import { IoBagOutline } from "react-icons/io5";
+
 
 
 const roboto = Roboto({
@@ -23,7 +28,7 @@ const montserrat = Montserrat({
   subsets: ['latin'],
 });
 
-const Navbar = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
+const Navbar = ({ logout, user, cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
 
   const ref = useRef();
 
@@ -37,35 +42,54 @@ const Navbar = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
       ref.current.classList.add('translate-x-full')
     }
   }
+
+  const [dropdown, setdropdown] = useState(false)
+
   return (
     <div className={montserrat.className}>
       <div className='line w-full text-sm bg-black h-12 text-white text-center flex justify-center items-center'>FREE SHIPPING FOR ALL U.S. ORDERS OVER $75</div>
-      <nav className=' flex flex-col  md:flex-row md:justify-start justify-center items-center shadow-xl'>
-        {/* <div className="logo ">
-          <img src="/mainlogo2.jpg" alt="" className={styles.mainlogo} />
-        </div> */}
-        <div className='logx text-3xl p-2  tracking-wide font-bold'>
+      {/* <nav className=' flex flex-col  md:flex-row md:justify-start justify-center items-center shadow-xl'> */}
+      <nav className='flex justify-center  items-center md:ml-auto shadow-xl'>
+        <div className='logx  text-4xl p-2  tracking-widest font-bold'>
           <div className={roboto.className}>
             YOUNGLA
           </div>
         </div>
-        <div className="links">
-          <ul className='listitems flex justify-center items-center mx-8  font-medium p-2 uppercase'>
-            <Link href={"/"} className='mx-2'><li>Home</li></Link>
-            <Link href={"/about"} className='mx-2'><li>Our Story</li></Link>
-            <Link href={"/contact"} className='mx-2'><li>Contact</li></Link>
-          </ul>
+        <div className="cart cursor-pointer items-center absolute right-9 top mx-5 " aria-hidden="false" >
+          <a onMouseOver={() => { setdropdown(true) }}>
+            {dropdown && <div className="z-50 my-4 h-[250px] absolute right-5 top-4 text-base list-none bg-slate-100 divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
+              <div className="px-4 py-3">
+                <span className="block text-sm text-gray-900 dark:text-white">Admin</span>
+                <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">admin@gmail.com</span>
+              </div>
+              <ul className="py-2" aria-labelledby="user-menu-button">
+                <li>
+                  <Link href={'/myaccounts'} className="block px-4 py-2 text-sm text-gray-700  w-full hover:bg-gray-300 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">My Account</Link>
+                </li>
+                <hr className='bg-black w-3/4 m-auto' />
+                <li>
+                  <Link href={'/orders'} className="block px-4 py-2 text-sm text-gray-700 w-full hover:bg-gray-300 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Orders</Link>
+                </li>
+                <hr className='bg-black  w-3/4 m-auto' />
+                <li>
+                  <p onClick={logout} className="block px-4 py-2 text-sm text-gray-700 w-full hover:bg-gray-300 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</p>
+                </li>
+                <hr className='bg-black w-3/4 m-auto' />
+                <li>
+                  <p onClick={() => setdropdown(false)} className="block px-4 py-2 text-extrabold text-black w-full hover:bg-gray-300 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Exit</p>
+                </li>
+              </ul>
+            </div>
+            }
+            {user.value && <FaEllo className='text-3xl cursor-pointer font-extrabold' />}
+          </a>
+          {!user.value && <Link href={"/login"}>
+            <CiUser className='text-3xl font-bold cursor-pointer' />
+          </Link>}
         </div>
-        <div className="cart cursor-pointer absolute right-9 top mx-5 " aria-hidden="false" >
-          <Link href={"/login"}>
-            <CiUser className='text-2xl cursor-pointer font-extrabold' />
-          </Link>
-        </div>
-
-
         <div onClick={toggleCart} className="cart absolute right-0 top mx-5 ">
 
-          <CiShoppingCart className='text-3xl  cursor-pointer' />
+          <IoBagOutline className='text-3xl font-extrabold  cursor-pointer' />
         </div>
         <div ref={ref} className={`sidebar h-[78%] w-96  absolute top-0 right-0 z-10  bg-slate-200 p-10 transform transition-transform duration-[0.4s] ${Object.keys(cart).length !== 0 ? 'translate-x-0' : 'translate-x-full'}
     `}>

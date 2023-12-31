@@ -11,6 +11,8 @@ export default function App({ Component, pageProps }) {
 
   const [cart, setcart] = useState({})
   const [subTotal, setsubTotal] = useState(0)
+  const [user, setuser] = useState({ value: null });
+  const [key, setkey] = useState(0)
   const router = useRouter();
 
   useEffect(() => {
@@ -23,7 +25,18 @@ export default function App({ Component, pageProps }) {
       console.log(error);
       localStorage.clear();
     }
-  }, [])
+    const token = localStorage.getItem('token');
+    if (token) {
+      setuser({ value: token });
+      setkey(Math.random())
+    }
+  }, [router.query])
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    setuser({ value: null });
+    setkey(Math.random());
+  }
 
 
   const saveCart = (myCart) => {
@@ -74,14 +87,14 @@ export default function App({ Component, pageProps }) {
   }
 
   return <>
-    <Navbar key={subTotal} cart={cart} addToCart={addToCart} RemoveToCart={RemoveToCart} ClearCart={ClearCart}
+    <Navbar logout={logout} user={user} key={key} cart={cart} addToCart={addToCart} RemoveToCart={RemoveToCart} ClearCart={ClearCart}
       subTotal={subTotal} />
     <Head>
       <title>Lifestyle Clothing Brand: YoungLA </title>
       <meta name='viewport' content="width=device-width , initial-scale=1.0 , minimum-scale=1.0" />
       <link rel="icon" href="/mianlogo.jpg" />
     </Head>
-    <Component cart={cart} addToCart={addToCart} RemoveToCart={RemoveToCart} ClearCart={ClearCart}
+    <Component BuyNow={BuyNow} cart={cart} addToCart={addToCart} RemoveToCart={RemoveToCart} ClearCart={ClearCart}
       subTotal={subTotal}  {...pageProps} />
     <Footer /> </>
 }

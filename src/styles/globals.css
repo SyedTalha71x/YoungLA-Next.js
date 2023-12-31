@@ -17,15 +17,19 @@ body {
 .login {
     background-color: #f9f7f7;
 }
-.sign{
+
+.sign {
     background-color: #f9f7f7;
 }
-.signup input{
+
+.signup input {
     border: 1px solid pink;
 }
-.listitems li{
+
+.listitems li {
     font-size: 14px;
 }
+
 .sidebar h2 {
     font-size: 20px;
     margin-left: 2px;
@@ -84,3 +88,16 @@ body {
   visibility: visible;
   transform: translate(0);
 } */
+
+.logx {
+    letter-spacing: 7px;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 790px) {
+    .logx {
+        margin-right: auto;
+        font-size: 35px;
+        letter-spacing: normal;
+    }
+}
