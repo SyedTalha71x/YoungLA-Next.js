@@ -10,6 +10,7 @@ export default async function handler(req, res) {
                 slug: req.body[i].slug,
                 desc: req.body[i].desc,
                 img: req.body[i].img,
+                img2: req.body[i].img2,
                 category: req.body[i].category,
                 size: req.body[i].size,
                 color: req.body[i].color,

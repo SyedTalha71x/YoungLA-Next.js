@@ -25,7 +25,7 @@ export default function Home({ products }) {
   return (
     <div>
       <div className='mainimagepage'>
-        <img  src="https://www.youngla.com/cdn/shop/files/12.13.23_Launch_Desktop_1600x.jpg?v=1702490532" alt="" className={styles.imagepage} />
+        <img src="https://www.youngla.com/cdn/shop/files/12.13.23_Launch_Desktop_1600x.jpg?v=1702490532" alt="" className={styles.imagepage} />
         <div>
           <section className="text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">
@@ -35,112 +35,124 @@ export default function Home({ products }) {
                 </div>
                 <p className="lg:w-2/3 w-full leading-relaxed text-gray-500">OUR COMMITMENT TO OUR CUSTOMERS BEGINS BEFORE OUR PRODUCT HITS THE MARKET. SINCE WE PRIORITIZE CUSTOMER SATISFACTION, WE SPEND AT LEAST TWO MONTHS TESTING THE CLOTHING BEFORE RELEASING IT. OUR AIM IS TO CREATE LONG LASTING RELATIONSHIPS WITH OUR CUSTOMERS.</p>
               </div>
-              <div className="flex flex-wrap -m-4 md:flex justify-center items-center text-center">
-                <div className="xl:w-1/3 md:w-1/2 p-4 md:m-auto">
-                  <div className="border border-gray-200 p-6 rounded-lg">
-                    <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                      <IoShirtSharp />
-                    </div>
-                    <h2 className="text-xl text-gray-900 font-medium title-font mb-2 ">Men's Shirts</h2>
-                    <Link href={"/tshirts"}>
-                      <div className={montserrat.className}>
-                        <button className="shirts-btn bg-black text-white uppercase font-medium px-14 py-3 shadow-xl  hover:bg-purple-50 hover:text-black my-2">Checkout</button>
+
+              <div className='category_page'>
+                <div className='categories'>
+                  <div className="categories_row " >
+                    <div className=" border bg-slate-100 border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700">
+                      <Link href={"/tshirts"}>
+                        <img className="category_image h-full w-full" src="https://www.youngla.com/cdn/shop/files/CNY_8170_400x.jpg?v=1687892237" />
+                      </Link>
+                      <div className='content overflow-hidden'>
+                        <div className={montserrat.className}>
+                          <button className="btn bg-black text-white text-2xl px-14 py-3 uppercase tracking-wider w-full hover:bg-transparent hover:transition-shadow hover:text-black">
+                            Shirts
+                          </button>
+                        </div>
                       </div>
-                    </Link>
+                    </div>
                   </div>
-                </div>
-                <div className="xl:w-1/3 md:w-1/2 p-4">
-                  <div className="border border-gray-200 p-6 rounded-lg">
-                    <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                      <IoShirtSharp />
-                    </div>
-                    <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Men's Jeans</h2>
-
-                    <Link href={"/jeans"}>
-                      <div className={montserrat.className}>
-                        <button className="shirts-btn bg-black text-white uppercase font-medium px-14 py-3 shadow-xl  hover:bg-purple-50 hover:text-black my-2">Checkout</button>
+                  <div className="categories_row " >
+                    <div className=" bg-slate-100 border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700">
+                      <Link href={"/jeans"}>
+                        <img className="category_image h-full w-full" src="https://www.youngla.com/cdn/shop/files/09_14_26_23_Johnny___Ruddy_eComm32742_400x.jpg?v=1692297166" />
+                      </Link>
+                      <div className='content overflow-hidden'>
+                        <div className={montserrat.className}>
+                          <button className="btn bg-black text-white text-2xl px-14 py-3 uppercase tracking-wider w-full hover:bg-transparent hover:transition-shadow hover:text-black">
+                            Jeans
+                          </button>
+                        </div>
                       </div>
-                    </Link>
-
+                    </div>
                   </div>
-                </div>
-                <div className="xl:w-1/3 md:w-1/2 p-4">
-                  <div className="border border-gray-200 p-6 rounded-lg">
-                    <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                      <IoShirtSharp />
-                    </div>
-                    <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Men's Joggers</h2>
-                    <Link href={"/trouser"}>
-                      <div className={montserrat.className}>
-                        <button className="shirts-btn bg-black text-white uppercase font-medium px-14 py-3 shadow-xl  hover:bg-purple-50 hover:text-black my-2">Checkout</button>
+                  <div className="categories_row " >
+                    <div className=" bg-slate-100 border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700">
+                      <Link href={"/shorts"}>
+                        <img className="category_image h-full w-full" src="https://www.youngla.com/cdn/shop/products/YLA6.12.21-116_a44dbbd6-be55-41de-9661-ebdee9ae33d8_400x.jpg?v=1653088061" />
+                      </Link>
+                      <div className='content overflow-hidden'>
+                        <div className={montserrat.className}>
+                          <button className="btn bg-black text-white text-2xl px-14 py-3 uppercase tracking-wider w-full hover:bg-transparent hover:transition-shadow hover:text-black">
+                            Shorts
+                          </button>
+                        </div>
                       </div>
-
-                    </Link>
+                    </div>
                   </div>
-                </div>
-                <div className="xl:w-1/3 md:w-1/2 p-4">
-                  <div className="border border-gray-200 p-6 rounded-lg">
-                    <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                      <IoShirtSharp />
-                    </div>
-                    <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Men's Sweatshirt</h2>
-                    <Link href={"/sweatshirt"}>
-                      <div className={montserrat.className}>
-                        <button className="shirts-btn bg-black text-white uppercase font-medium px-14 py-3 shadow-xl  hover:bg-purple-50 hover:text-black my-2">Checkout</button>
+                  <div className="categories_row " >
+                    <div className=" bg-slate-100 border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700">
+                      <Link href={"/joggers"}>
+                        <img className="category_image h-full w-full" src="https://www.youngla.com/cdn/shop/files/221_black_002_12_12_rudy_ecomm_c0b2dd31-6573-4d96-bd41-dfc3dfd5be85_400x.jpg?v=1701972653" />
+                      </Link>
+                      <div className='content overflow-hidden'>
+                        <div className={montserrat.className}>
+                          <button className="btn bg-black text-white text-2xl px-14 py-3 uppercase tracking-wider w-full hover:bg-transparent hover:transition-shadow hover:text-black">
+                            Joggers
+                          </button>
+                        </div>
                       </div>
-
-                    </Link>
+                    </div>
                   </div>
-                </div>
-                <div className="xl:w-1/3 md:w-1/2 p-4">
-                  <div className="border border-gray-200 p-6 rounded-lg">
-                    <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                      <IoShirtSharp />
-                    </div>
-                    <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Men's Undergarments</h2>
-                    <Link href={"/undergarments"}>
-                      <div className={montserrat.className}>
-                        <button className="shirts-btn bg-black text-white uppercase font-medium px-14 py-3 shadow-xl  hover:bg-purple-50 hover:text-black my-2">Checkout</button>
+                  <div className="categories_row " >
+                    <div className=" bg-slate-100 border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700">
+                      <Link href={"/tank"}>
+                        <img className="category_image h-full w-full" src="https://www.youngla.com/cdn/shop/files/YLA_9.20_400x.jpg?v=1695750101" />
+                      </Link>
+                      <div className='content overflow-hidden'>
+                        <div className={montserrat.className}>
+                          <button className="btn bg-black text-white text-2xl px-14 py-3 uppercase tracking-wider w-full hover:bg-transparent hover:transition-shadow hover:text-black">
+                            Tanks
+                          </button>
+                        </div>
                       </div>
-
-                    </Link>
+                    </div>
                   </div>
-                </div>
-                <div className="xl:w-1/3 md:w-1/2 p-4 ">
-                  <div className="border border-gray-200 p-6 rounded-lg">
-                    <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                      <IoShirtSharp />
-                    </div>
-                    <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Other Accessories</h2>
-                    <Link href={"/other"}>
-                      <div className={montserrat.className}>
-                        <button className="shirts-btn bg-black text-white uppercase font-medium px-14 py-3 shadow-xl  hover:bg-purple-50 hover:text-black my-2">Checkout</button>
+                  <div className="categories_row " >
+                    <div className=" bg-slate-100 border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700">
+                      <Link href={"/outerwear"}>
+                        <img className="category_image h-full w-full" src="https://www.youngla.com/cdn/shop/files/566_oatmeal_001_11_02_jerdani_ecomm_4_400x.jpg?v=1699509655" />
+                      </Link>
+                      <div className='content overflow-hidden'>
+                        <div className={montserrat.className}>
+                          <button className="btn bg-black text-white text-2xl px-14 py-3 uppercase tracking-wider w-full hover:bg-transparent hover:transition-shadow hover:text-black">
+                            Outerwear
+                          </button>
+                        </div>
                       </div>
-
-                    </Link>
+                    </div>
                   </div>
                 </div>
               </div>
+
             </div>
           </section>
         </div>
       </div>
-      <section class="text-gray-600 body-font cursor-pointer text-center">
+
+
+
+
+
+
+
+      <section className="arrivals_brand text-gray-600 body-font cursor-pointer text-center">
         <div className={montserrat.className}>
           <h2 className='main_heading text-center text-2xl w-3/4 m-auto py-2 shadow-2xl   font-medium uppercase bg-black text-white '>New Arrivals</h2>
         </div>
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-wrap -m-4" >
+        <div className="arrivals_new container px-5 py-24 mx-auto">
+          <div className="arrivals_grid flex flex-wrap -m-4" >
             {Object.keys(products).map((k) => {
-              return <div class="lg:w-1/4 md:w-1/2 p-4 w-full" key={products[k]._id}>
-                <Link href={`/Products/${products[k].slug}`} class="block relative rounded overflow-hidden">
-                  <img alt="ecommerce" class="object-cover object-center w-full h-full block" src={products[k].img} />
+              return <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key={products[k]._id}>
+                <Link href={`/Products/${products[k].slug}`} className="block relative rounded overflow-hidden">
+                  <img alt="ecommerce" className="object-cover object-center w-full h-full block" src={products[k].img} />
+                  <img src={products[k].img2} alt="" className="image_2 object-cover object-center w-full h-full" />
                 </Link>
-                <div class="mt-4">
+                <div className="mt-4">
                   <Link href={`/Products/${products[k].slug}`}>
-                    <h2 class="text-gray-900 title-font text-center text-md font-medium">{products[k].title}</h2>
+                    <h2 className="text-gray-900 title-font text-center text-md font-medium">{products[k].title}</h2>
                   </Link>
-                  <p class="mt-1">${products[k].price}</p>
+                  <p className="mt-1">${products[k].price}.00</p>
                 </div>
               </div>
             })}

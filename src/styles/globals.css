@@ -90,14 +90,76 @@ body {
 } */
 
 .logx {
-    letter-spacing: 7px;
+    letter-spacing: 10px;
     font-weight: 700;
 }
 
 @media screen and (max-width: 790px) {
+    .line {
+        font-size: 13px;
+    }
+
     .logx {
         margin-right: auto;
-        font-size: 35px;
-        letter-spacing: normal;
+        font-size: 32px;
+        letter-spacing: 6px;
+    }
+}
+
+
+.category_image:hover {
+    transform: scale(0.9);
+    transition: .4s all;
+}
+
+.category_page {
+    height: 100%;
+    width: 100%;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.category_image {
+    height: 100%;
+    width: 100%;
+}
+
+.image_2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.image_2:hover {
+    opacity: 1;
+    transition: .4s all;
+}
+
+@media screen and (max-width: 1170px) {
+    .categories {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .categories {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .arrivals_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
     }
 }

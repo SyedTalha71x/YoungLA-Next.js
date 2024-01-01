@@ -49,8 +49,8 @@ const Navbar = ({ logout, user, cart, addToCart, RemoveToCart, ClearCart, subTot
     <div className={montserrat.className}>
       <div className='line w-full text-sm bg-black h-12 text-white text-center flex justify-center items-center'>FREE SHIPPING FOR ALL U.S. ORDERS OVER $75</div>
       {/* <nav className=' flex flex-col  md:flex-row md:justify-start justify-center items-center shadow-xl'> */}
-      <nav className='flex justify-center  items-center md:ml-auto shadow-xl'>
-        <div className='logx  text-4xl p-2  tracking-widest font-bold'>
+      <nav className='flex justify-center  items-center md:ml-auto font-extrabold  shadow-xl'>
+        <div className='logx text-4xl p-2  font-bold'>
           <div className={roboto.className}>
             YOUNGLA
           </div>
@@ -100,7 +100,7 @@ const Navbar = ({ logout, user, cart, addToCart, RemoveToCart, ClearCart, subTot
           <span onClick={toggleCart} className='cross absolute top-3  right-2 cursor-pointer text-xl text-purple-950'><ImCross /></span>
           <div className="cartinfo cursor-pointer">
             <div className="cartsolid">
-              {Object.keys(cart).length == 0 && <div className=' mt-4 mb-4 text-center uppercase font-bold'>Your Cart is Empty</div>}
+              {Object.keys(cart).length == 0 && <div className=' mt-4 mb-4 text-center uppercase font-medium'>Your Cart is Empty</div>}
               {Object.keys(cart).map((k) => {
                 return <div className="cartrow" key={k}>
                   <div className="rightcart">
@@ -124,11 +124,11 @@ const Navbar = ({ logout, user, cart, addToCart, RemoveToCart, ClearCart, subTot
                   className="current grid grid-cols-2 gap-1 my-4 ">
                   <div className="checkbtn">
                     <Link href={"/checkout"}>
-                      <button className='bg-black py-2 px-8 uppercase cursor-pointer text-white font-medium  text-center'>Checkout</button>
+                      <button className='bg-black py-2 px-7 uppercase cursor-pointer tracking-widest text-white font-medium  text-center hover:bg-transparent hover:text-black'>Checkout</button>
                     </Link>
                   </div>
                   <div className="removebtn">
-                    <button onClick={ClearCart} className='bg-black uppercase ml-4 py-2 px-8 text-white font-medium  text-center cursor-pointer'>Remove</button>
+                    <button onClick={ClearCart} className='bg-black uppercase ml-5 py-2 px-8 tracking-widest text-white font-medium  text-center cursor-pointer hover:bg-transparent hover:text-black'>Remove</button>
                   </div>
                 </div>
               </div>
