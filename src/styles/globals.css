@@ -68,10 +68,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 64%;
     margin-top: 10px;
+    margin-right: auto;
 }
-
+.det{
+    background-color: rgb(249, 252, 252);
+}
 .increment span {
     margin: 5px;
 }

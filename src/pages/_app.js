@@ -28,14 +28,17 @@ export default function App({ Component, pageProps }) {
     const token = localStorage.getItem('token');
     if (token) {
       setuser({ value: token });
-      setkey(Math.random())
     }
+    setkey(Math.random())
   }, [router.query])
 
   const logout = () => {
     localStorage.removeItem('token');
     setuser({ value: null });
     setkey(Math.random());
+    window.location.reload();
+    router.push('/');
+
   }
 
 
@@ -49,20 +52,20 @@ export default function App({ Component, pageProps }) {
     setsubTotal(subt);
   }
 
-  const addToCart = (ItemCode, qty, price, name, size, variant) => {
+  const addToCart = (ItemCode, qty, img, price, name, size, variant) => {
     let newCart = cart;
     if (ItemCode in cart) {
       newCart[ItemCode].qty = newCart[ItemCode].qty + qty;
     }
     else {
-      newCart[ItemCode] = { qty: 1, price, name, size, variant };
+      newCart[ItemCode] = { qty: 1, img, price, name, size, variant };
     }
     setcart(newCart)
     saveCart(newCart)
   }
 
-  const BuyNow = (ItemCode, qty, price, name, size, variant) => {
-    let newCart = { ItemCode: { qty: 1, price, name, size, variant } };
+  const BuyNow = (ItemCode, qty, img, price, name, size, variant) => {
+    let newCart = { ItemCode: { qty: 1, img, price, name, size, variant } };
     setcart(newCart)
     saveCart(newCart);
     router.push('/checkout')
@@ -74,7 +77,7 @@ export default function App({ Component, pageProps }) {
   }
 
 
-  const RemoveToCart = (ItemCode, qty, price, name, size, variant) => {
+  const RemoveToCart = (ItemCode, qty, img, price, name, size, variant) => {
     let newCart = JSON.parse(JSON.stringify(cart));
     if (ItemCode in cart) {
       newCart[ItemCode].qty = newCart[ItemCode].qty - qty;
@@ -87,8 +90,8 @@ export default function App({ Component, pageProps }) {
   }
 
   return <>
-    <Navbar logout={logout} user={user} key={key} cart={cart} addToCart={addToCart} RemoveToCart={RemoveToCart} ClearCart={ClearCart}
-      subTotal={subTotal} />
+    {key && <Navbar logout={logout} user={user} key={key} cart={cart} addToCart={addToCart} RemoveToCart={RemoveToCart} ClearCart={ClearCart}
+      subTotal={subTotal} />}
     <Head>
       <title>Lifestyle Clothing Brand: YoungLA </title>
       <meta name='viewport' content="width=device-width , initial-scale=1.0 , minimum-scale=1.0" />

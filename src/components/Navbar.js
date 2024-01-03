@@ -68,7 +68,7 @@ const Navbar = ({ logout, user, cart, addToCart, RemoveToCart, ClearCart, subTot
                 </li>
                 <hr className='bg-black w-3/4 m-auto' />
                 <li>
-                  <Link href={'/orders'} className="block px-4 py-2 text-sm text-gray-700 w-full hover:bg-gray-300 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Orders</Link>
+                  <Link href={'/userorder'} className="block px-4 py-2 text-sm text-gray-700 w-full hover:bg-gray-300 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Orders</Link>
                 </li>
                 <hr className='bg-black  w-3/4 m-auto' />
                 <li>
@@ -91,7 +91,7 @@ const Navbar = ({ logout, user, cart, addToCart, RemoveToCart, ClearCart, subTot
 
           <IoBagOutline className='text-3xl font-extrabold  cursor-pointer' />
         </div>
-        <div ref={ref} className={`sidebar h-[78%] w-96  absolute top-0 right-0 z-10  bg-slate-200 p-10 transform transition-transform duration-[0.4s] ${Object.keys(cart).length !== 0 ? 'translate-x-0' : 'translate-x-full'}
+        <div ref={ref} className={`sidebar h-[100%] w-[430px]  absolute top-0 right-0 z-10  bg-slate-200 p-10 transform transition-transform duration-[0.4s] ${Object.keys(cart).length !== 0 ? 'translate-x-0' : 'translate-x-full'}
     `}>
           <h2 className={montserrat.className}>CART</h2>
 
@@ -102,17 +102,23 @@ const Navbar = ({ logout, user, cart, addToCart, RemoveToCart, ClearCart, subTot
             <div className="cartsolid">
               {Object.keys(cart).length == 0 && <div className=' mt-4 mb-4 text-center uppercase font-medium'>Your Cart is Empty</div>}
               {Object.keys(cart).map((k) => {
-                return <div className="cartrow" key={k}>
-                  <div className="rightcart">
-                    <h2>{cart[k].name}</h2>
-                    <p>{cart[k].variant}</p>
-                    <p>{cart[k].size}</p>
-                    <span>${cart[k].price}</span>
+                return <div className="cartrow grid grid-cols-2 p-4" key={k}>
+                  <div className="leftcart">
+                    <img src={cart[k].img} alt="" className='cart_image h-full w-full object-cover object-top' />
+                  </div>
+                  <div className="rightcart mx-4">
+                    <h2 className='font-medium text-xl w-full text-gray-800'>{cart[k].name}</h2>
+
+                    <p className='text-gray-600'>{cart[k].variant}</p>
+                    <p className='text-gray-600'> {cart[k].size}</p>
+                 
+             
+                    <span className='text-gray-600' >${cart[k].price}.00</span>
                     <div>
-                      <span>Total {subTotal}</span>
+                      <span className='font-mediu'>Total ${subTotal}.00</span>
                     </div>
                     <div className="increment">
-                      <span className='minus '><CiCircleMinus onClick={() => { RemoveToCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant) }} className='text-xl font-bold' />
+                      <span className='minus '><CiCircleMinus onClick={() => { RemoveToCart(k, 1, cart[k].img, cart[k].price, cart[k].name, cart[k].size, cart[k].variant) }} className='text-xl font-bold' />
                       </span> <span className='quantity text-xl m-2'>{cart[k].qty}</span><span className='plus'><  CiCirclePlus className='text-xl font-bold' onClick={() => { addToCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant) }} /></span>
                     </div>
 
@@ -123,12 +129,12 @@ const Navbar = ({ logout, user, cart, addToCart, RemoveToCart, ClearCart, subTot
                 <div
                   className="current grid grid-cols-2 gap-1 my-4 ">
                   <div className="checkbtn">
-                    <Link href={"/checkout"}>
-                      <button className='bg-black py-2 px-7 uppercase cursor-pointer tracking-widest text-white font-medium  text-center hover:bg-transparent hover:text-black'>Checkout</button>
+                    <Link href={"/checkoutone"}>
+                      <button className='bg-black py-2 px-7 ml-3 uppercase cursor-pointer tracking-widest text-white font-medium  text-center hover:bg-transparent hover:text-black'>Checkout</button>
                     </Link>
                   </div>
                   <div className="removebtn">
-                    <button onClick={ClearCart} className='bg-black uppercase ml-5 py-2 px-8 tracking-widest text-white font-medium  text-center cursor-pointer hover:bg-transparent hover:text-black'>Remove</button>
+                    <button onClick={ClearCart} className='bg-black uppercase ml-3 py-2 px-8 tracking-widest text-white font-medium  text-center cursor-pointer hover:bg-transparent hover:text-black'>Remove</button>
                   </div>
                 </div>
               </div>

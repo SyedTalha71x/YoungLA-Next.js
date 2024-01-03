@@ -3,7 +3,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const OrderSchema = new Schema({
-    userId: { type: String, required: true },
+    email: { type: String, required: true },
+    orderId: { type: String, required: true },
+    paymentInfo: { type: String, default: '' },
     Products: [{
         productId: { type: String },
         quantity: { type: Number, default: 1 }

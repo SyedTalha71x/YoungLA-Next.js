@@ -99,8 +99,8 @@ export default function Slug({ addToCart, product, variants, BuyNow }) {
                         </div>
                         <div className="flex">
                             <span className="title-font font-medium text-xl text-gray-800">${product.price}.00</span>
-                            <button onClick={() => { addToCart(Slug, 1, product.price, product.title, size, color) }} className="flex ml-auto text-white bg-black px-6 py-2 uppercase tracking-widest hover:bg-transparent hover:text-black">Checkout</button>
-                            <button onClick={() => BuyNow(Slug, 1, product.price, product.title, size, color)} className=" flex ml-1 text-white bg-black px-6 py-2 uppercase tracking-widest hover:bg-transparent hover:text-black">
+                            <button onClick={() => { addToCart(Slug, 1, product.img, product.price, product.title, size, color) }} className="flex ml-auto text-white bg-black px-6 py-2 uppercase tracking-widest hover:bg-transparent hover:text-black">Checkout</button>
+                            <button onClick={() => BuyNow(Slug, 1, product.img, product.price, product.title, size, color)} className=" flex ml-1 text-white bg-black px-6 py-2 uppercase tracking-widest hover:bg-transparent hover:text-black">
                                 Buy Now
                             </button>
                         </div>
