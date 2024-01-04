@@ -19,13 +19,13 @@ const montserrat = Montserrat({
 const Footer = () => {
   return (
     <div className={montserrat.className}>
-      <footer className="bg-white dark:bg-gray-900 cursor-pointer">
+      <footer className="bg-white dark:bg-gray-900 cursor-pointer mt-6">
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <Link href={"/"} className="flex items-center">
                 {/* <GiClothes className='footer-logo text-5xl text-pink-800 ' /> */}
-                <img className={styles.mainlogo2} src='/mainlogo2.jpg'/> 
+                <img className={styles.mainlogo2} src='/mainlogo2.jpg' />
                 <span className="self-center text-2xl font-bold mx-2 text-purple-900 whitespace-nowrap dark:text-white">YOUNGLA</span>
               </Link>
 

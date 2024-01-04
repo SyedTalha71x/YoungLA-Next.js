@@ -15,10 +15,7 @@ const checkoutone = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => 
   const [city, setcity] = useState('')
   const [firstname, setfirstname] = useState('')
   const [lastname, setlastname] = useState('')
-  const [cardholder, setcardholder] = useState('')
-  const [cardno, setcardno] = useState('')
-  const [cardexpiry, setcardexpiry] = useState('')
-  const [cardcvc, setcardcvc] = useState('')
+
   const [address, setaddress] = useState('')
   const [phone, setphone] = useState('')
   const [postalcode, setpostalcode] = useState('')
@@ -28,26 +25,26 @@ const checkoutone = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => 
     if (e.target.name == 'email') {
       setemail(e.target.value);
     }
-    else if (e.target.name == 'cardholder') {
-      setcardholder(e.target.value);
+    else if (e.target.name == 'country') {
+      setcountry(e.target.value);
     }
-    else if (e.target.name == 'cardno') {
-      setcardno(e.target.value);
+    else if (e.target.name == 'firstname') {
+      setfirstname(e.target.value);
     }
-    else if (e.target.name == 'cardexpiry') {
-      setcardexpiry(e.target.value);
-    }
-    else if (e.target.name == 'cardcvc') {
-      setcardcvc(e.target.value);
+    else if (e.target.name == 'lastname') {
+      setlastname(e.target.value);
     }
     else if (e.target.name == 'address') {
       setaddress(e.target.value);
     }
-    else if (e.target.name == 'state') {
-      setstate(e.target.value);
+    else if (e.target.name == 'city') {
+      setcity(e.target.value);
     }
-    else if (e.target.name == 'zip') {
-      setzip(e.target.value);
+    else if (e.target.name == 'postalcode') {
+      setpostalcode(e.target.value);
+    }
+    else if (e.target.name == 'phone') {
+      setphone(e.target.value);
     }
 
     // if (email.length > 4 && cardholder.length > 4 && cardno.length > 4 && cardexpiry.length > 4 &&
@@ -119,7 +116,7 @@ const checkoutone = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => 
             <div className="contact_heading">
               <h4 className='text-2xl font-medium'>Contact</h4>
               <div className="email_input my-4">
-                <input className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="email" id='email' name='email' value={email} placeholder='Email' />
+                <input onChange={handleChange} className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="email" id='email' name='email' value={email} placeholder='Email' />
               </div>
             </div>
 
@@ -129,25 +126,25 @@ const checkoutone = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => 
               </div>
               <form action="" className='my-2'>
                 <div className="input_info my-2">
-                  <input className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='country' id='country' value={country} placeholder='Country/Region' />
+                  <input onChange={handleChange} className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='country' id='country' value={country} placeholder='Country/Region' />
                 </div>
                 <div className="input_info my-2">
-                  <input className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='firstname' id='firstname' value={firstname} placeholder='First Name' />
+                  <input onChange={handleChange} className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='firstname' id='firstname' value={firstname} placeholder='First Name' />
                 </div>
                 <div className="input_info my-2">
-                  <input className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='lastname' id='lastname' value={lastname} placeholder='Last Name' />
+                  <input onChange={handleChange} className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='lastname' id='lastname' value={lastname} placeholder='Last Name' />
                 </div>
                 <div className="input_info my-2">
-                  <input className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='address' id='address' value={address} placeholder='Address' />
+                  <input onChange={handleChange} className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='address' id='address' value={address} placeholder='Address' />
                 </div>
                 <div className="input_info my-2">
-                  <input className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='city' id='city' value={city} placeholder='City' />
+                  <input onChange={handleChange} className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='city' id='city' value={city} placeholder='City' />
                 </div>
                 <div className="input_info my-2">
-                  <input className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='postalcode' id='postalcode' value={postalcode} placeholder='Postal code' />
+                  <input onChange={handleChange} className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='postalcode' id='postalcode' value={postalcode} placeholder='Postal code' />
                 </div>
                 <div className="input_info my-2">
-                  <input className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='phone' id='phone' value={phone} placeholder='Phone' />
+                  <input onChange={handleChange} className='w-full py-3 p-2 outline-none rounded-md bg-gray-200' type="text" name='phone' id='phone' value={phone} placeholder='Phone' />
                 </div>
               </form>
 
