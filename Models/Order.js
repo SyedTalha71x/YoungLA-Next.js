@@ -5,14 +5,10 @@ const Schema = mongoose.Schema;
 const OrderSchema = new Schema({
     email: { type: String, required: true },
     orderId: { type: String, required: true },
-    paymentInfo: { type: String, default: '' },
-    Products: [{
-        productId: { type: String },
-        quantity: { type: Number, default: 1 }
-    }],
-    Address: { type: String, required: true },
-    Amount: { type: Number, required: true },
-    Status: { type: String, default: "Pending", required: true },
+    paymentInfo: { type: String, default: 'pending' },
+    products: { type: Object, required: true },
+    address: { type: String, required: true },
+    amount: { type: Number, required: true },
 }, { timestamps: true });
 
 mongoose.models = {}

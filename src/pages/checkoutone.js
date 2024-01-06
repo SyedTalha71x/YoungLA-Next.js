@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import { useState, CSSProperties, useEffect } from "react";
 import Link from 'next/link'
 import { Montserrat } from 'next/font/google'
+import { MoonLoader } from "react-spinners";
+import { useRouter } from 'next/router';
 
 const montserrat = Montserrat({
   weight: '500',
@@ -8,8 +10,26 @@ const montserrat = Montserrat({
 });
 
 
+const override = {
+  display: "block",
+  margin: "0 auto",
+};
+
 
 const checkoutone = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => {
+
+  const router = useRouter();
+
+  const [loading, setloading] = useState(false);
+
+  const NavigateClick = () => {
+    setloading(true);
+    setTimeout(() => {
+      setloading(false);
+      router.push('/finalsummary');
+    }, 12000);
+  }
+
   const [email, setemail] = useState('')
   const [country, setcountry] = useState('')
   const [city, setcity] = useState('')
@@ -47,22 +67,40 @@ const checkoutone = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => 
       setphone(e.target.value);
     }
 
-    // if (email.length > 4 && cardholder.length > 4 && cardno.length > 4 && cardexpiry.length > 4 &&
-    //   cardcvc.length > 4 && address.length > 4 && state.length > 4 && zip.length > 4) {
-    //   setdisabled(false)
+    // if (email.length > 3 && firstname.length > 3 && lastname.length > 3 && address.length > 10 && city.length > 3 && postalcode.length > 3 && phone.length > 3) {
+    //   setdisabled(false);
     // }
     // else {
-    //   setdisabled(true)
+    //   setdisabled(true);
     // }
 
-
   }
+
+  // const initialpayment = async () => {
+  //   const oid = Math.floor(Math.random() * Date.now())
+  //   const data = { orderId: oid, amount: subTotal, products: cart }
+  //   let a = await fetch('http://localhost:3000/api/pretransaction', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(data),
+  //   })
+  //   let response = await a.json();
+  //   console.log(response);
+  //   // setemail()
+  //   // setcountry()
+  //   // setfirstname()
+  //   // setlastname()
+  //   // setaddress()
+  //   // setpostalcode()
+  //   // setphone()
+  // }
+
 
   return (
     <>
       <div className={montserrat.className}>
-
-
         <div class="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32 mt-24">
           <div class="px-4 pt-8">
             <p class="text-xl font-medium">Order Summary</p>
@@ -98,14 +136,20 @@ const checkoutone = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => 
               <div className="payment_methods my-2">
                 <div className="details">
                   <div className='my-3 text-2xl font-medium'>Payment Methods</div>
-                  <Link href={"/payment"} className={montserrat.className}>
-                    {/* <button> */}
+                  {/* <Link href={"/payment"} className={montserrat.className}>
+                
                     <div className='w-full py-6 cursor-pointer p-4  border-2 border-black  bg-gray-100 rounded-md hover:bg-gray-200 hover:text-black'>Pay Via Debit/credit cards </div>
-                    {/* </button> */}
-                  </Link>
-                  <Link href={"/finalsummary"} className={montserrat.className}>
-                    <div className='w-full py-6 cursor-pointer p-4  border-2 border-black bg-gray-100 rounded-md my-2 hover:bg-gray-200 hover:text-black'>Cash On Delivery</div>
-                  </Link>
+                  </Link> */}
+                  <div class="relative">
+                    <input class="peer hidden" id="radio_1" type="radio" name="radio" checked />
+                    <span class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
+                    <label class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4" for="radio_1">
+                      <img class="w-14 object-contain" src="/images/naorrAeygcJzX0SyNI4Y0.png" alt="" />
+                      <div class="ml-5">
+                        <span class="mt-2 font-semibold">Cash On Delivery</span>
+                      </div>
+                    </label>
+                  </div>
                 </div>
               </div>
             </form>
@@ -160,11 +204,24 @@ const checkoutone = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => 
                 </div>
               </div>
             </div>
-
-
+            <div>
+              {
+                loading ?
+                  <MoonLoader className="flex justify-center items-center"
+                    color="#36d7b7"
+                    loading
+                    size={60}
+                    speedMultiplier={1}
+                    cssOverride={override}
+                  />
+                  :
+                  <div className="button-container">
+                    <button onClick={NavigateClick} className="payment_btn bg-black disabled:bg-slate-300 text-white py-3 w-full mt-3 flex text-center justify-center items-center cursor-pointer">Place Order</button>
+                  </div>}
+            </div>
           </div>
         </div>
-      </div>
+      </div >
     </>
   )
 }

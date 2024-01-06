@@ -3,7 +3,7 @@ import Router, { useRouter } from 'next/router'
 import connectDB from '../../Middleware/db'
 import Order from '../../Models/Order'
 
-const finalsummary = () => {
+const finalsummary = ({ cart, subTotal }) => {
 
   return (
     <div><section class="text-gray-600 body-font overflow-hidden">
