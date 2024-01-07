@@ -41,6 +41,10 @@ export default function App({ Component, pageProps }) {
 
   }
 
+  const outofStock = () => {
+
+  }
+
 
   const saveCart = (myCart) => {
     localStorage.setItem("cart", JSON.stringify(myCart))

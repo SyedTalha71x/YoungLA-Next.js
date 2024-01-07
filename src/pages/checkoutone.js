@@ -27,7 +27,7 @@ const checkoutone = ({ cart, addToCart, RemoveToCart, ClearCart, subTotal }) => 
     setTimeout(() => {
       setloading(false);
       router.push('/finalsummary');
-    }, 12000);
+    }, 10000);
   }
 
   const [email, setemail] = useState('')

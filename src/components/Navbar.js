@@ -49,7 +49,7 @@ const Navbar = ({ logout, user, cart, addToCart, RemoveToCart, ClearCart, subTot
     <div className={montserrat.className}>
       <div className='line w-full text-sm bg-black h-12 text-white text-center flex justify-center items-center'>DUE TO SOME ISSUES, WE ARE ONLY ACCEPTING PAYMENTS BY CASH ON DELIVERY.</div>
       {/* <nav className=' flex flex-col  md:flex-row md:justify-start justify-center items-center shadow-xl'> */}
-      <nav className='flex justify-center  items-center md:ml-auto font-extrabold  shadow-xl'>
+      <nav className='flex justify-center  items-center md:ml-auto font-extrabold shadow-xl'>
         <div className='logx text-4xl p-2  font-bold'>
           <div className={roboto.className}>
             YOUNGLA
@@ -126,19 +126,19 @@ const Navbar = ({ logout, user, cart, addToCart, RemoveToCart, ClearCart, subTot
               })}
             </div>
           </div>
-          {/* <div className={montserrat.className}>
+          <div className={montserrat.className}>
             <div
               className="current grid grid-cols-2 gap-1 my-4 ">
               <div className="checkbtn">
                 <Link href={"/checkoutone"}>
-                  <button className='bg-black py-2 px-7 ml-3 uppercase cursor-pointer tracking-widest text-white font-medium  text-center hover:bg-transparent hover:text-black'>Checkout</button>
+                  <button className='bg-black py-2 px-7 ml-3 fixed bottom-[20px] uppercase cursor-pointer tracking-widest text-white font-medium  text-center hover:bg-transparent hover:text-black'>Checkout</button>
                 </Link>
               </div>
               <div className="removebtn">
-                <button onClick={ClearCart} className='bg-black uppercase ml-3 py-2 px-8 tracking-widest text-white font-medium  text-center cursor-pointer hover:bg-transparent hover:text-black'>Remove</button>
+                <button onClick={ClearCart} className='bg-black fixed bottom-[20px] uppercase ml-3 py-2 px-8 tracking-widest text-white font-medium  text-center cursor-pointer hover:bg-transparent hover:text-black'>Remove</button>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
 
       </nav>
